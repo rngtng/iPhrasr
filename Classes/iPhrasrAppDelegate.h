@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iPhrasrAppDelegate : NSObject <UIApplicationDelegate> {
+@class SayingsController;
+
+@interface iPhrasrAppDelegate : NSObject <UIApplicationDelegate>
+{
     UIWindow *window;
+    SayingsController *_sayingsController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

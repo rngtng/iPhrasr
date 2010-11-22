@@ -92,8 +92,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				D2CC0745129B12B900888692 /* SayingsView.xib */,
 				8D1107310486CEB800E47090 /* iPhrasr-Info.plist */,
 				D2CC0735129B113F00888692 /* README */,
 			);
@@ -122,6 +120,8 @@
 		D2CC0723129B0CCD00888692 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				D2CC0745129B12B900888692 /* SayingsView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";

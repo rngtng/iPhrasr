@@ -7,6 +7,7 @@
 //
 
 #import "iPhrasrAppDelegate.h"
+#import "SayingsController.h"
 
 @implementation iPhrasrAppDelegate
 
@@ -19,7 +20,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-    
+
+    _sayingsController = [[SayingsController alloc] initWithNibName:@"SayingsView"
+                                                             bundle:[NSBundle mainBundle]];
+
+    [window addSubview:_sayingsController.view];
     [window makeKeyAndVisible];
     
     return YES;
@@ -74,8 +79,11 @@
 }
 
 
-- (void)dealloc {
+- (void)dealloc
+{
+    [_sayingsController release];
     [window release];
+
     [super dealloc];
 }
 
