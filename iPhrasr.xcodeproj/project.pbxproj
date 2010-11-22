@@ -22,6 +22,7 @@
 		D2CC08E9129B1C8800888692 /* SayingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CC08E7129B1C8800888692 /* SayingsView.xib */; };
 		D2CC08EE129B1C9000888692 /* iPhrasrAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CC08EB129B1C9000888692 /* iPhrasrAppDelegate.m */; };
 		D2CC08EF129B1C9000888692 /* SayingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CC08ED129B1C9000888692 /* SayingsController.m */; };
+		D2CC08F4129B1CF900888692 /* Saying.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CC08F3129B1CF900888692 /* Saying.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		D2CC08EB129B1C9000888692 /* iPhrasrAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhrasrAppDelegate.m; sourceTree = "<group>"; };
 		D2CC08EC129B1C9000888692 /* SayingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SayingsController.h; sourceTree = "<group>"; };
 		D2CC08ED129B1C9000888692 /* SayingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SayingsController.m; sourceTree = "<group>"; };
+		D2CC08F2129B1CF900888692 /* Saying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Saying.h; sourceTree = "<group>"; };
+		D2CC08F3129B1CF900888692 /* Saying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Saying.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 		D2CC079A129B1C3900888692 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2CC08F2129B1CF900888692 /* Saying.h */,
+				D2CC08F3129B1CF900888692 /* Saying.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				D2CC084F129B1C3900888692 /* SBJsonWriter.m in Sources */,
 				D2CC08EE129B1C9000888692 /* iPhrasrAppDelegate.m in Sources */,
 				D2CC08EF129B1C9000888692 /* SayingsController.m in Sources */,
+				D2CC08F4129B1CF900888692 /* Saying.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

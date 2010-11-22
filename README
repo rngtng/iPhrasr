@@ -1,8 +1,13 @@
 
 Keyboard Shortcuts:
 
-CMD+SHIFT+?         Help
-Alt+Doppelklick     Quick Help
+CMD+SHIFT+?                     Help
+Alt+Doppelklick                 Quick Help
+Alt+CMD+Pfeil oben              Switch Header/Impl (oder drei Finger)
+CMD+Shift+D                     Open Quickly
+ALT+CMD+Links/Rechts            File History
+CTRL+I                          Auto-Indentieren
+CMD+Doppelklick auf Methode     Reinspringen
 
 Cocoa:
 

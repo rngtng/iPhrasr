@@ -7,7 +7,7 @@
 //
 
 #import "SayingsController.h"
-
+#import "Saying.h"
 
 @implementation SayingsController
 
@@ -53,15 +53,36 @@
 }
 */
 
+- (void)randomizeSentence
+{
+    Saying *randomSaying = [[[Saying alloc] init] autorelease];
+    
+    [randomSaying randomizeFromOnlineDatabase];
+    
+    self.leftSentenceLabel.text = randomSaying.leftSentence;   // NSString-Objekt
+    self.rightSentenceLabel.text = randomSaying.rightSentence;  // NSString-Objekt
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.leftSentenceLabel.text = @"Ein erster Test,";   // NSString-Objekt
-    self.rightSentenceLabel.text = @"der funktioniert.";  // NSString-Objekt
+    [self randomizeSentence];
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self becomeFirstResponder];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.type == UIEventSubtypeMotionShake) {
+        [self randomizeSentence];
+    }
+}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
