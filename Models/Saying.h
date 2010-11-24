@@ -10,6 +10,7 @@
 
 #define kLeftSentenceIdKey      @"leftSentenceId"
 #define kRightSentenceIdKey     @"rightSentenceId"
+#define kApiEndPoint            @"http://phrasr.warteschlange.de:8080"
 
 @interface Saying : NSObject
 {

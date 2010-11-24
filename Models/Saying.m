@@ -11,7 +11,6 @@
 
 @interface Saying ()
 
-+ (NSString *)sentenceByAPIRequestWithId:(NSNumber *)sentenceId;
 + (NSDictionary *)randomSayingInfoByAPIRequest;
 
 + (NSDictionary *)JSONValueByAPIRequestWithURLString:(NSString *)urlString;
@@ -69,24 +68,13 @@
 {
     NSDictionary *sentenceInfo = [[self class] randomSayingInfoByAPIRequest];
 
-    self.leftSentence = [[self class] sentenceByAPIRequestWithId:[sentenceInfo
-                                                                  valueForKey:kLeftSentenceIdKey]];
-    self.rightSentence = [[self class] sentenceByAPIRequestWithId:[sentenceInfo
-                                                                   valueForKey:kRightSentenceIdKey]];
-}
-
-+ (NSString *)sentenceByAPIRequestWithId:(NSNumber *)sentenceId
-{
-    NSString *urlString = [NSString stringWithFormat:@"http://0.0.0.0:3000/sentences/%@.json", sentenceId];
-    NSDictionary *response = [[self class] JSONValueByAPIRequestWithURLString:urlString];
-
-    NSDictionary *sentenceDescription = [[response allValues] objectAtIndex:0];
-    return [sentenceDescription valueForKey:@"text"];
+    self.leftSentence  = [sentenceInfo valueForKey:kLeftSentenceIdKey];
+    self.rightSentence = [sentenceInfo valueForKey:kRightSentenceIdKey];
 }
 
 + (NSDictionary *)randomSayingInfoByAPIRequest
 {
-    NSString *urlString = @"http://0.0.0.0:3000/sayings.json";
+    NSString *urlString = [NSString stringWithFormat:@"%@/sayings.json", kApiEndPoint];
     
     // URLWithString : Convenience method, die ein autoreleasetes Objekt liefert:
     /*
@@ -100,12 +88,12 @@
     
     NSDictionary *response = [[self class] JSONValueByAPIRequestWithURLString:urlString];
 
-    NSNumber *leftSentenceId = [response valueForKeyPath:@"saying.left_sentence_id"];
-    NSNumber *rightSentenceId = [response valueForKeyPath:@"saying.right_sentence_id"];
+    NSString *leftSentenceText = [response valueForKeyPath:@"saying.left_sentence.text"];
+    NSString *rightSentenceText = [response valueForKeyPath:@"saying.right_sentence.text"];
     
     return [NSDictionary dictionaryWithObjectsAndKeys:
-            leftSentenceId, kLeftSentenceIdKey,
-            rightSentenceId, kRightSentenceIdKey,
+            leftSentenceText, kLeftSentenceIdKey,
+            rightSentenceText, kRightSentenceIdKey,
             nil];
 }
 
